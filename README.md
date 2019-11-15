@@ -3,7 +3,7 @@ Command demultiplexer for admins and academics
 
 ## Usage
 
- `dmux USER ADDRESSES (COMMAND | SCRIPTFILE) [OUTFILE]`
+`dmux USER ADDRESSES (COMMAND | SCRIPTFILE) [OUTFILE]`
 
 |            |                                |
 | -          | -                              |
