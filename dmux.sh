@@ -1,33 +1,5 @@
 #!/usr/bin/env bash
 
-# ---------------------------------------------------------------------------- #
-# dmux USER ADDRESSES (COMMAND | SCRIPTFILE) [OUTFILE]
-# USER          ssh user name
-# ADDRESSES     nmap compatible address string
-# COMMAND       command to execute
-# SCRIPTFILE    shell script file to execute
-# OUTFILE       optional output file
-#
-# Examples:     dmux ubuntu 10.13.19.2-25 hostname hosts.txt
-#
-# ---------------------------------------------------------------------------- #
-#
-# Notes:    Currently requires ssh keys to be pre-distributed
-#               ssh-copy-id is useful for this task.
-#
-#           Currently does not validate argument contents, use
-#               them correctly or suffer completely unknown consequences.
-#
-# ---------------------------------------------------------------------------- #
-#
-# TODOs:    - Confirm args are feasible
-#           - Add traps so that ctrl+c is less dangerous
-#           - Check that ssh id is trusted or prompt for password
-#           - Check dependencies exist
-#           - Start flag random or hash + update end flag
-#
-# ---------------------------------------------------------------------------- #
-
 # PROCESS ARGS
 if [ "$#" -lt 3 ]; then
     echo 'Missing required arguments, exiting.'
