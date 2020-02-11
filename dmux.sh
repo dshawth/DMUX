@@ -38,8 +38,9 @@ fi
 # CHECK HOSTS
 temp_scan=$(mktemp)
 temp_hosts=$(mktemp)
-nmap $2 -sn -oG ${temp_scan} -q >/dev/null 2>&1
-awk '{print $2}' ${temp_scan} | head -n-1 | tail -n+2 > ${temp_hosts}
+nmap $2 -p22 -Pn -oG ${temp_scan} -q >/dev/null 2>&1
+cat ${temp_scan}
+awk '{print $2}' ${temp_scan} | uniq | head -n-1 | tail -n+2 > ${temp_hosts}
 mapfile -t hosts < ${temp_hosts}
 rm ${temp_scan} ${temp_hosts}
 num_hosts=${#hosts[@]}

@@ -43,5 +43,6 @@ dmux ubuntu 10.13.19.2-25 hostname
 
 ```bash
 # integrate an option to do the below
-for ip in `cat servers`; do sshpass -p $pass ssh-copy-id -o "StrictHostKeyChecking=no" -o "ConnectTimeout=2" $user@$ip; done
+nmap -sL $range | awk '{print $5}' | head -n-1 | tail -n+2 > hosts
+for ip in `cat hosts`; do sshpass -p $pass ssh-copy-id -o "StrictHostKeyChecking=no" -o "ConnectTimeout=2" $user@$ip; done
 ```
