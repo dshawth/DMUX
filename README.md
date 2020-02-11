@@ -40,3 +40,8 @@ dmux ubuntu 10.13.19.2-25 hostname
 - Check that ssh id is trusted or prompt for password
 - Verify dependencies exist
 - Sentinel values for start and stop, random or hashed
+
+```bash
+# integrate an option to do the below
+for ip in `cat servers`; do sshpass -p $pass ssh-copy-id -o "StrictHostKeyChecking=no" -o "ConnectTimeout=2" $user@$ip; done
+```
