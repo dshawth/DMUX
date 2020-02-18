@@ -52,6 +52,16 @@ if [ "$num_hosts" -eq 0 ]; then
     exit
 fi
 
+# CHECK SSH ON HOSTS
+temp_ssh_hosts=$(mktemp)
+temp_failed_hosts=$(mktemp)
+
+# example ssh -o PasswordAuthentication=no 10.82.252.1
+
+
+
+rm ${temp_ssh_hosts} ${temp_failed_hosts}
+
 # START THE ( COMMAND | SCRIPTFILE )
 temp_files=()
 started=0
